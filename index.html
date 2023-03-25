@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en"
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Filter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section>
+        <ul>
+            <li class="list active" data-filter="All">All</li>
+            <li class="list" data-filter="mobile">Mobile</li>
+            <li class="list" data-filter="camera">Camera</li>
+            <li class="list" data-filter="watch">Watch</li>
+            <li class="list" data-filter="shoe">Shoe</li>
+            <li class="list" data-filter="headphone">Headphone</li>
+        </ul>
+        <div class="product">
+            <div class="itembox mobile"><a href="https://imgbb.com/"><img src="https://i.ibb.co/r2Y0Zch/camera1.jpg" alt="camera1" border="0"></a></div>
+            <div class="itembox camera"><a href="https://imgbb.com/"><img src="https://i.ibb.co/b52S8Y8/camera2.jpg" alt="camera2" border="0"></a></div>
+            <div class="itembox watch"><a href="https://imgbb.com/"><img src="https://i.ibb.co/QjJvXgm/camera3.jpg" alt="camera3" border="0"></a></div>
+            <div class="itembox shoe"><a href="https://imgbb.com/"><img src="https://i.ibb.co/NnJFy19/headphone1.jpg" alt="headphone1" border="0"></a></div>
+            <div class="itembox headphone"><a href="https://imgbb.com/"><img src="https://i.ibb.co/7j6LZ8Z/headphone2.jpg" alt="headphone2" border="0"></a></div>
+
+
+            <div class="itembox mobile"><a href="https://imgbb.com/"><img src="https://i.ibb.co/12fbWCL/mobile1.jpg" alt="mobile1" border="0"></a></div>
+            <div class="itembox camera"><a href="https://imgbb.com/"><img src="https://i.ibb.co/b52S8Y8/camera2.jpg" alt="camera2" border="0"></a></div>
+            <div class="itembox watch"><a href="https://imgbb.com/"><img src="https://i.ibb.co/Kw9F73g/watch2.jpg" alt="watch2" border="0"></a></div>
+            <div class="itembox shoe"><a href="https://imgbb.com/"><img src="https://i.ibb.co/fpfCnGz/shoe2.jpg" alt="shoe2" border="0"></a></div>
+            <div class="itembox headphone"><a href="https://imgbb.com/"><img src="https://i.ibb.co/7j6LZ8Z/headphone2.jpg" alt="headphone2" border="0"></a></div>
+           
+            
+            <div class="itembox mobile"><a href="https://imgbb.com/"><img src="https://i.ibb.co/VMv2HHb/mobile3.jpg" alt="mobile3" border="0"></a></div>
+            <div class="itembox camera"><a href="https://imgbb.com/"><img src="https://i.ibb.co/QjJvXgm/camera3.jpg" alt="camera3" border="0"></a></div>
+            <div class="itembox watch"><a href="https://imgbb.com/"><img src="https://i.ibb.co/mHVkbFz/watch3.jpg" alt="watch3" border="0"></a></div>
+            <div class="itembox shoe"><a href="https://imgbb.com/"><img src="https://i.ibb.co/hgyM0wM/shoe3.jpg" alt="shoe3" border="0"></a></div>
+            <div class="itembox headphone"><a href="https://imgbb.com/"><img src="https://i.ibb.co/THdsFfV/headphone3.jpg" alt="headphone3" border="0"></a></div>
+
+
+            <div class="itembox mobile"><a href="https://imgbb.com/"><img src="https://i.ibb.co/7NdHM78/mobile4.jpg" alt="mobile4" border="0"></a></div>
+            <div class="itembox camera"><a href="https://imgbb.com/"><img src="https://i.ibb.co/QjJvXgm/camera4.jpg" alt="camera3" border="0"></a></div>
+            <div class="itembox watch"><a href="https://imgbb.com/"><img src="https://i.ibb.co/XX2mPY9/watch4.jpg" alt="watch4" border="0"></a></div>
+            <div class="itembox shoe"><a href="https://imgbb.com/"><img src="https://i.ibb.co/HTNy4Bn/shoe4.jpg" alt="shoe4" border="0"></a></div>
+            <div class="itembox headphone"><a href="https://imgbb.com/"><img src="https://i.ibb.co/6YDGhpH/headphone4.jpg" alt="headphone4" border="0"></a><div>
+        </div>
+    </section>
+    <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.list').click(function(){
+                const value = $(this).attr('data-filter');
+                if (value == 'all'){
+                    $('.itembox').show('1000');
+                }
+                else{
+                    $('.itembox').not('.'+value).hide('1000');
+                    $('.itembox').filter('.'+value).show('1000');
+                }
+            })
+            // add active class on selected item
+
+            $('.list').click(function(){
+              $(this).addClass('active').siblings().remove('active');
+            })
+        })
+    </script>
+</body>
+</html>
